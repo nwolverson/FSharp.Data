@@ -14,9 +14,9 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/style.css" />
-    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/fsdata.css" />
-    <script type="text/javascript" src="/FSharp.Data/ja/../content/tips.js"></script>
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/content/style.css" />
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/content/fsdata.css" />
+    <script type="text/javascript" src="/FSharp.Data/content/tips.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -188,7 +188,7 @@ URLを使って <code>Load</code> メソッドを呼び出しています：</p>
 </tr>
 </table>
 
-<p><img src="/FSharp.Data/ja/images/chart1.png" alt="Chart" /></p>
+<p><img src="/FSharp.Data/images/chart7.png" alt="Chart" /></p>
 
 <p>もう1つ例として、先月のデータの詳細を確認できるように
 <code>ローソク</code> (Candlestick)チャートにしてみます：</p>
@@ -218,12 +218,12 @@ URLを使って <code>Load</code> メソッドを呼び出しています：</p>
 </td>
 <td class="snippet"><pre class="fssnip">
 <span class="c">// ローソクチャートを使って株価をビジュアル化</span>
-<span onmouseout="hideTip(event, 'fs23', 62)" onmouseover="showTip(event, 'fs23', 62)" class="i">Chart</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs29', 63)" onmouseover="showTip(event, 'fs29', 63)" class="i">Candlestick</span>(<span onmouseout="hideTip(event, 'fs25', 64)" onmouseover="showTip(event, 'fs25', 64)" class="i">recent</span>)<span class="o">.</span><span class="i">WithYAxis</span>(<span class="i">Min</span> <span class="o">=</span> <span class="n">35.0</span>, <span class="i">Max</span> <span class="o">=</span> <span class="n">45.0</span>)</pre>
+<span onmouseout="hideTip(event, 'fs23', 62)" onmouseover="showTip(event, 'fs23', 62)" class="i">Chart</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs29', 63)" onmouseover="showTip(event, 'fs29', 63)" class="i">Candlestick</span>(<span onmouseout="hideTip(event, 'fs25', 64)" onmouseover="showTip(event, 'fs25', 64)" class="i">recent</span>)<span class="o">.</span><span class="i">WithYAxis</span>(<span class="i">Min</span> <span class="o">=</span> <span class="n">40.0</span>, <span class="i">Max</span> <span class="o">=</span> <span class="n">50.0</span>)</pre>
 </td>
 </tr>
 </table>
 
-<p><img src="/FSharp.Data/ja/images/chart2.png" alt="Chart" /></p>
+<p><img src="/FSharp.Data/images/chart8.png" alt="Chart" /></p>
 
 <h2>測定単位を使用する</h2>
 
@@ -610,7 +610,7 @@ CSVドキュメントを動的に処理するための詳しい説明があり�
 <div class="tip" id="fs1">namespace FSharp</div>
 <div class="tip" id="fs2">namespace FSharp.Data</div>
 <div class="tip" id="fs3">type Stocks = CsvProvider&lt;...&gt;<br /><br />Full name: CsvProvider.Stocks</div>
-<div class="tip" id="fs4">type CsvProvider<br /><br />Full name: FSharp.Data.CsvProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of a CSV file.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sample&#39;&gt;Location of a CSV sample file or a string containing a sample CSV document.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Separators&#39;&gt;Column delimiter(s). Defaults to `,`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;InferRows&#39;&gt;Number of rows to use for inference. Defaults to `1000`. If this is zero, all rows are used.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Schema&#39;&gt;Optional column types, in a comma separated list. Valid types are `int`, `int64`, `bool`, `float`, `decimal`, `date`, `guid`, `string`, `int?`, `int64?`, `bool?`, `float?`, `decimal?`, `date?`, `guid?`, `int option`, `int64 option`, `bool option`, `float option`, `decimal option`, `date option`, `guid option` and `string option`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;You can also specify a unit and the name of the column like this: `Name (type&amp;lt;unit&amp;gt;)`, or you can override only the name. If you don&#39;t want to specify all the columns, you can reference the columns by name like this: `ColumnName=type`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;HasHeaders&#39;&gt;Whether the sample contains the names of the columns as its first line.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;IgnoreErrors&#39;&gt;Whether to ignore rows that have the wrong number of columns or which can&#39;t be parsed using the inferred or specified schema. Otherwise an exception is thrown when these rows are encountered.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;AssumeMissingValues&#39;&gt;When set to true, the type provider will assume all columns can have missing values, even if in the provided sample all values are present. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;PreferOptionals&#39;&gt;When set to true, inference will prefer to use the option type instead of nullable types, `double.NaN` or `&quot;&quot;` for missing values. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Quote&#39;&gt;The quotation mark (for surrounding values containing the delimiter). Defaults to `&quot;`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;MissingValues&#39;&gt;The set of strings recogized as missing values. Defaults to `NaN,NA,#N/A,:,-`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;CacheRows&#39;&gt;Whether the rows should be caches so they can be iterated multiple times. Defaults to true. Disable for large datasets.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Culture&#39;&gt;The culture used for parsing numbers and dates. Defaults to the invariant culture.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Encoding&#39;&gt;The encoding used to read the sample. You can specify either the character set name or the codepage number. Defaults to UTF8 for files, and to ISO-8859-1 the for HTTP requests, unless `charset` is specified in the `Content-Type` response header.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;ResolutionFolder&#39;&gt;A directory that is used when resolving relative file references (at design time and in hosted execution).&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;EmbeddedResource&#39;&gt;When specified, the type provider first attempts to load the sample from the specified resource <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. &#39;MyCompany.MyAssembly, resource_name.csv&#39;). This is useful when exposing types generated by the type provider.&lt;/param&gt;</em></div>
+<div class="tip" id="fs4">type CsvProvider<br /><br />Full name: FSharp.Data.CsvProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of a CSV file.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sample&#39;&gt;Location of a CSV sample file or a string containing a sample CSV document.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Separators&#39;&gt;Column delimiter(s). Defaults to `,`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;InferRows&#39;&gt;Number of rows to use for inference. Defaults to `1000`. If this is zero, all rows are used.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Schema&#39;&gt;Optional column types, in a comma separated list. Valid types are `int`, `int64`, `bool`, `float`, `decimal`, `date`, `guid`, `string`, `int?`, `int64?`, `bool?`, `float?`, `decimal?`, `date?`, `guid?`, `int option`, `int64 option`, `bool option`, `float option`, `decimal option`, `date option`, `guid option` and `string option`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;You can also specify a unit and the name of the column like this: `Name (type&amp;lt;unit&amp;gt;)`, or you can override only the name. If you don&#39;t want to specify all the columns, you can reference the columns by name like this: `ColumnName=type`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;HasHeaders&#39;&gt;Whether the sample contains the names of the columns as its first line.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;IgnoreErrors&#39;&gt;Whether to ignore rows that have the wrong number of columns or which can&#39;t be parsed using the inferred or specified schema. Otherwise an exception is thrown when these rows are encountered.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;AssumeMissingValues&#39;&gt;When set to true, the type provider will assume all columns can have missing values, even if in the provided sample all values are present. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;PreferOptionals&#39;&gt;When set to true, inference will prefer to use the option type instead of nullable types, `double.NaN` or `&quot;&quot;` for missing values. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Quote&#39;&gt;The quotation mark (for surrounding values containing the delimiter). Defaults to `&quot;`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;MissingValues&#39;&gt;The set of strings recogized as missing values. Defaults to `NaN,NA,#N/A,:,-,TBA,TBD`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;CacheRows&#39;&gt;Whether the rows should be caches so they can be iterated multiple times. Defaults to true. Disable for large datasets.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Culture&#39;&gt;The culture used for parsing numbers and dates. Defaults to the invariant culture.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Encoding&#39;&gt;The encoding used to read the sample. You can specify either the character set name or the codepage number. Defaults to UTF8 for files, and to ISO-8859-1 the for HTTP requests, unless `charset` is specified in the `Content-Type` response header.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;ResolutionFolder&#39;&gt;A directory that is used when resolving relative file references (at design time and in hosted execution).&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;EmbeddedResource&#39;&gt;When specified, the type provider first attempts to load the sample from the specified resource <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. &#39;MyCompany.MyAssembly, resource_name.csv&#39;). This is useful when exposing types generated by the type provider.&lt;/param&gt;</em></div>
 <div class="tip" id="fs5">val msft : CsvProvider&lt;...&gt;<br /><br />Full name: CsvProvider.msft</div>
 <div class="tip" id="fs6">CsvProvider&lt;...&gt;.Load(uri: string) : CsvProvider&lt;...&gt;<br /><em><br /><br />Loads CSV from the specified uri</em><br />CsvProvider&lt;...&gt;.Load(reader: System.IO.TextReader) : CsvProvider&lt;...&gt;<br /><em><br /><br />Loads CSV from the specified reader</em><br />CsvProvider&lt;...&gt;.Load(stream: System.IO.Stream) : CsvProvider&lt;...&gt;<br /><em><br /><br />Loads CSV from the specified stream</em></div>
 <div class="tip" id="fs7">val firstRow : CsvProvider&lt;...&gt;.Row<br /><br />Full name: CsvProvider.firstRow</div>
@@ -683,13 +683,13 @@ CSVドキュメントを動的に処理するための詳しい説明があり�
         </div>
         <div class="span3">
           <a href="/FSharp.Data/ja/index.html">
-            <img src="/FSharp.Data/ja/../images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+            <img src="/FSharp.Data/images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
           </a>
 
           <ul class="nav nav-list" id="menu">
             <li class="nav-header">
-              <a href="/FSharp.Data/ja/index.html" class="nflag"><img src="/FSharp.Data/ja/../images/ja.png" /></a>
-              <a href="/FSharp.Data/ja/../index.html" class="nflag nflag2"><img src="/FSharp.Data/ja/../images/en.png" /></a>
+              <a href="/FSharp.Data/ja/index.html" class="nflag"><img src="/FSharp.Data/images/ja.png" /></a>
+              <a href="/FSharp.Data/index.html" class="nflag nflag2"><img src="/FSharp.Data/images/en.png" /></a>
               F# Data
             </li>
             <li class="divider"></li>
@@ -705,57 +705,57 @@ CSVドキュメントを動的に処理するための詳しい説明があり�
             <li class="nav-header">F# Data ライブラリ</li>
             <li><span>
                 <a href="/FSharp.Data/ja/index.html">はじめに</a>
-                (<a href="/FSharp.Data/ja/../index.html">En</a>)
+                (<a href="/FSharp.Data/index.html">En</a>)
                 </span></li>
             <li class="divider"></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/JsonProvider.html">JSON 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/JsonProvider.html">En</a>)
+                (<a href="/FSharp.Data/library/JsonProvider.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/XmlProvider.html">XML 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/XmlProvider.html">En</a>)
+                (<a href="/FSharp.Data/library/XmlProvider.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/CsvProvider.html">CSV 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/CsvProvider.html">En</a>)
+                (<a href="/FSharp.Data/library/CsvProvider.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/WorldBank.html">WorldBank プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/WorldBank.html">En</a>)
+                (<a href="/FSharp.Data/library/WorldBank.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/Freebase.html">Freebase プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/Freebase.html">En</a>)
+                (<a href="/FSharp.Data/library/Freebase.html">En</a>)
                 </span></li>
             <li class="divider"></li>
             <li><span>
-                <a href="/FSharp.Data/ja/library/JsonValue.html">JSON パーサーおよびリーダー</a>
-                (<a href="/FSharp.Data/ja/../library/JsonValue.html">En</a>)
+                <a href="/FSharp.Data/ja/library/Http.html">HTTP ユーティリティ</a>
+                (<a href="/FSharp.Data/library/Http.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/CsvFile.html">CSV パーサーおよびリーダー</a>
-                (<a href="/FSharp.Data/ja/../library/CsvFile.html">En</a>)
+                (<a href="/FSharp.Data/library/CsvFile.html">En</a>)
                 </span></li>
             <li><span>
-                <a href="/FSharp.Data/ja/library/Http.html">HTTP ユーティリティ</a>
-                (<a href="/FSharp.Data/ja/../library/Http.html">En</a>)
+                <a href="/FSharp.Data/ja/library/JsonValue.html">JSON パーサーおよびリーダー</a>
+                (<a href="/FSharp.Data/library/JsonValue.html">En</a>)
                 </span></li>
 
             <li class="nav-header">チュートリアル</li>
             <li><span>
                 <a href="/FSharp.Data/ja/tutorials/JsonToXml.html">JSONとXMLの相互変換</a>
-                (<a href="/FSharp.Data/ja/../tutorials/JsonToXml.html">En</a>)
+                (<a href="/FSharp.Data/tutorials/JsonToXml.html">En</a>)
                 </span></li>
 
             <li><span>
                 <a href="/FSharp.Data/ja/tutorials/JsonAnonymizer.html">JSONの匿名化</a>
-                (<a href="/FSharp.Data/ja/../tutorials/JsonAnonymizer.html">En</a>)
+                (<a href="/FSharp.Data/tutorials/JsonAnonymizer.html">En</a>)
                 </span></li>
 
             <li class="nav-header">リファレンス</li>
             <li><span>
-                <a href="/FSharp.Data/ja/../reference/index.html">API リファレンス (En)</a>
+                <a href="/FSharp.Data/reference/index.html">API リファレンス (En)</a>
                 </span></li>
           </ul>
         </div>

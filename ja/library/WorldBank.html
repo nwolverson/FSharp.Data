@@ -14,9 +14,9 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/style.css" />
-    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/fsdata.css" />
-    <script type="text/javascript" src="/FSharp.Data/ja/../content/tips.js"></script>
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/content/style.css" />
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/content/fsdata.css" />
+    <script type="text/javascript" src="/FSharp.Data/content/tips.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -133,7 +133,7 @@ Webサイトにある"Data Science" のチュートリアルでも使われて�
 そのため、世界銀行から受信したデータセットをそのまま渡せば
 Xが年、Yがその年の値になったチャートが作成できます。</p>
 
-<p><img src="/FSharp.Data/ja/images/chart3.png" alt="Chart" /></p>
+<p><img src="/FSharp.Data/images/chart9.png" alt="Chart" /></p>
 
 <h2>世界銀行のデータを非同期的に使う</h2>
 
@@ -245,7 +245,7 @@ F# Dataライブラリには様々なstatic引数を受け取るような
 それぞれのデータセットから1つの折れ線チャートを出力して、
 各チャートを <code>Chart.Combine</code> で1つの総合チャートにしています。</p>
 
-<p><img src="/FSharp.Data/ja/images/chart4.png" alt="Chart" /></p>
+<p><img src="/FSharp.Data/images/chart10.png" alt="Chart" /></p>
 
 <h2>関連する記事</h2>
 
@@ -269,7 +269,7 @@ Try F# の Data Science チュートリアルにはFreebase 型プロバイダ�
 <div class="tip" id="fs11">type Chart =<br />&#160;&#160;static member Area : data:seq&lt;#value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member Area : data:seq&lt;#key * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member Bar : data:seq&lt;#value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member Bar : data:seq&lt;#key * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member BoxPlotFromData : data:seq&lt;#key * #seq&lt;&#39;a2&gt;&gt; * ?Name:string * ?Title:string * ?Color:Color * ?XTitle:string * ?YTitle:string * ?Percentile:int * ?ShowAverage:bool * ?ShowMedian:bool * ?ShowUnusualValues:bool * ?WhiskerPercentile:int -&gt; GenericChart (requires &#39;a2 :&gt; value)<br />&#160;&#160;static member BoxPlotFromStatistics : data:seq&lt;#key * #value * #value * #value * #value * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string * ?Percentile:int * ?ShowAverage:bool * ?ShowMedian:bool * ?ShowUnusualValues:bool * ?WhiskerPercentile:int -&gt; GenericChart<br />&#160;&#160;static member Bubble : data:seq&lt;#value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string * ?BubbleMaxSize:int * ?BubbleMinSize:int * ?BubbleScaleMax:float * ?BubbleScaleMin:float * ?UseSizeForLabel:bool -&gt; GenericChart<br />&#160;&#160;static member Bubble : data:seq&lt;#key * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string * ?BubbleMaxSize:int * ?BubbleMinSize:int * ?BubbleScaleMax:float * ?BubbleScaleMin:float * ?UseSizeForLabel:bool -&gt; GenericChart<br />&#160;&#160;static member Candlestick : data:seq&lt;#value * #value * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; CandlestickChart<br />&#160;&#160;static member Candlestick : data:seq&lt;#key * #value * #value * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; CandlestickChart<br />&#160;&#160;...<br /><br />Full name: FSharp.Charting.Chart</div>
 <div class="tip" id="fs12">static member Chart.Line : data:seq&lt;#value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:System.Drawing.Color * ?XTitle:string * ?YTitle:string -&gt; ChartTypes.GenericChart<br />static member Chart.Line : data:seq&lt;#key * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:System.Drawing.Color * ?XTitle:string * ?YTitle:string -&gt; ChartTypes.GenericChart</div>
 <div class="tip" id="fs13">type WorldBank = WorldBankDataProvider&lt;...&gt;<br /><br />Full name: WorldBank.WorldBank</div>
-<div class="tip" id="fs14">type WorldBankDataProvider<br /><br />Full name: FSharp.Data.WorldBankDataProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of WorldBank data with additional configuration parameters. See http://www.worldbank.org for terms and conditions.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sources&#39;&gt;The World Bank data sources to include, separated by semicolons. Defaults to `World Development Indicators;Global Financial Development`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If an empty string is specified, includes all data sources.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Asynchronous&#39;&gt;Generate asynchronous calls. Defaults to false.&lt;/param&gt;</em></div>
+<div class="tip" id="fs14">type WorldBankDataProvider<br /><br />Full name: FSharp.Data.WorldBankDataProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of WorldBank data with additional configuration parameters. See http://www.worldbank.org for terms and conditions.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sources&#39;&gt;The World Bank data sources to include, separated by semicolons. Defaults to `World Development Indicators;Global Financial Development`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If an empty string is specified, includes all data sources.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Asynchronous&#39;&gt;Generate asynchronous calls. Defaults to false.&lt;/param&gt;</em></div>
 <div class="tip" id="fs15">WorldBankDataProvider&lt;...&gt;.GetDataContext() : WorldBankDataProvider&lt;...&gt;.ServiceTypes.WorldBankDataService</div>
 <div class="tip" id="fs16">val wb : WorldBankDataProvider&lt;...&gt;.ServiceTypes.WorldBankDataService<br /><br />Full name: WorldBank.wb</div>
 <div class="tip" id="fs17">val countries : WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country []<br /><br />Full name: WorldBank.countries</div>
@@ -293,13 +293,13 @@ Try F# の Data Science チュートリアルにはFreebase 型プロバイダ�
         </div>
         <div class="span3">
           <a href="/FSharp.Data/ja/index.html">
-            <img src="/FSharp.Data/ja/../images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+            <img src="/FSharp.Data/images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
           </a>
 
           <ul class="nav nav-list" id="menu">
             <li class="nav-header">
-              <a href="/FSharp.Data/ja/index.html" class="nflag"><img src="/FSharp.Data/ja/../images/ja.png" /></a>
-              <a href="/FSharp.Data/ja/../index.html" class="nflag nflag2"><img src="/FSharp.Data/ja/../images/en.png" /></a>
+              <a href="/FSharp.Data/ja/index.html" class="nflag"><img src="/FSharp.Data/images/ja.png" /></a>
+              <a href="/FSharp.Data/index.html" class="nflag nflag2"><img src="/FSharp.Data/images/en.png" /></a>
               F# Data
             </li>
             <li class="divider"></li>
@@ -315,57 +315,57 @@ Try F# の Data Science チュートリアルにはFreebase 型プロバイダ�
             <li class="nav-header">F# Data ライブラリ</li>
             <li><span>
                 <a href="/FSharp.Data/ja/index.html">はじめに</a>
-                (<a href="/FSharp.Data/ja/../index.html">En</a>)
+                (<a href="/FSharp.Data/index.html">En</a>)
                 </span></li>
             <li class="divider"></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/JsonProvider.html">JSON 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/JsonProvider.html">En</a>)
+                (<a href="/FSharp.Data/library/JsonProvider.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/XmlProvider.html">XML 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/XmlProvider.html">En</a>)
+                (<a href="/FSharp.Data/library/XmlProvider.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/CsvProvider.html">CSV 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/CsvProvider.html">En</a>)
+                (<a href="/FSharp.Data/library/CsvProvider.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/WorldBank.html">WorldBank プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/WorldBank.html">En</a>)
+                (<a href="/FSharp.Data/library/WorldBank.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/Freebase.html">Freebase プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../library/Freebase.html">En</a>)
+                (<a href="/FSharp.Data/library/Freebase.html">En</a>)
                 </span></li>
             <li class="divider"></li>
             <li><span>
-                <a href="/FSharp.Data/ja/library/JsonValue.html">JSON パーサーおよびリーダー</a>
-                (<a href="/FSharp.Data/ja/../library/JsonValue.html">En</a>)
+                <a href="/FSharp.Data/ja/library/Http.html">HTTP ユーティリティ</a>
+                (<a href="/FSharp.Data/library/Http.html">En</a>)
                 </span></li>
             <li><span>
                 <a href="/FSharp.Data/ja/library/CsvFile.html">CSV パーサーおよびリーダー</a>
-                (<a href="/FSharp.Data/ja/../library/CsvFile.html">En</a>)
+                (<a href="/FSharp.Data/library/CsvFile.html">En</a>)
                 </span></li>
             <li><span>
-                <a href="/FSharp.Data/ja/library/Http.html">HTTP ユーティリティ</a>
-                (<a href="/FSharp.Data/ja/../library/Http.html">En</a>)
+                <a href="/FSharp.Data/ja/library/JsonValue.html">JSON パーサーおよびリーダー</a>
+                (<a href="/FSharp.Data/library/JsonValue.html">En</a>)
                 </span></li>
 
             <li class="nav-header">チュートリアル</li>
             <li><span>
                 <a href="/FSharp.Data/ja/tutorials/JsonToXml.html">JSONとXMLの相互変換</a>
-                (<a href="/FSharp.Data/ja/../tutorials/JsonToXml.html">En</a>)
+                (<a href="/FSharp.Data/tutorials/JsonToXml.html">En</a>)
                 </span></li>
 
             <li><span>
                 <a href="/FSharp.Data/ja/tutorials/JsonAnonymizer.html">JSONの匿名化</a>
-                (<a href="/FSharp.Data/ja/../tutorials/JsonAnonymizer.html">En</a>)
+                (<a href="/FSharp.Data/tutorials/JsonAnonymizer.html">En</a>)
                 </span></li>
 
             <li class="nav-header">リファレンス</li>
             <li><span>
-                <a href="/FSharp.Data/ja/../reference/index.html">API リファレンス (En)</a>
+                <a href="/FSharp.Data/reference/index.html">API リファレンス (En)</a>
                 </span></li>
           </ul>
         </div>
