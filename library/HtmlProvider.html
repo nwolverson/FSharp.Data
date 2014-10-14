@@ -43,8 +43,8 @@
 <p>This article demonstrates how to use the HTML type provider to read HTML tables files
 in a statically typed way.</p>
 
-<p>The HTML type provider takes a sample HTML document as input and generates a type based on the data
-present on the columns of that sample. The column names are obtained from the first (header) row.</p>
+<p>The HTML Type Provider takes a sample HTML document as input and generates a type based on the data
+present in the columns of that sample. The column names are obtained from the first (header) row.</p>
 
 <h2>Introducing the provider</h2>
 
@@ -65,8 +65,8 @@ is located in the <code>../../../bin</code> directory, we can load it in F# Inte
 
 <h3>Parsing Power Market Data</h3>
 
-<p>The Elexon - BM Reports website provides market data about the U.K's current power system. For simplicty an example of this data below is shown in a CSV format,
- (you can see an example of the raw html document this data was extracted from in <a href="../data/MarketDepth.htm"><code>data/MarketDepth.htm</code></a>):</p>
+<p>The Elexon - BM Reports website provides market data about the U.K's current power system. For simplicity, an example of this data below is shown in CSV format,
+ (you can see an example of the raw HTML document this data was extracted from in <a href="../data/MarketDepth.htm"><code>data/MarketDepth.htm</code></a>):</p>
 
 <table class="pre"><tr><td><pre lang="text">Settlement Day,Period,IMBALNGC,Offer Volume Bid Volume,Accepted Offer Vol,Accepted Bid Vol,UAOV,UABV,PAOV,PABV
 2014-01-14,1,877.000,52378.500,-53779.500,348.200,-654.374,0.000,0.000,348.200,-654.374 
@@ -88,9 +88,9 @@ first row is headers. (This behaviour is likely to get smarter in later releases
 </table>
 
 <p>The generated type provides a type space of tables that it has managed to parse out of the given HTML Document.
-Each types name is derived from either the id, title, name, summary or caption attributes/tags provided. If none of these 
-entities exist then the table will simply be named <code>Tablexx</code> where xx is the position in the HTML doc if all of the tables were flatterned out into a list.
-The <code>Load</code> method allows reading the data from a file or from a web resource. We could also have used a web url instead of a local file in the sample parameter of the type provider.
+Each type's name is derived from either the id, title, name, summary or caption attributes/tags provided. If none of these 
+entities exist then the table will simply be named <code>Tablexx</code> where xx is the position in the HTML document if all of the tables were flatterned out into a list.
+The <code>Load</code> method allows reading the data from a file or web resource. We could also have used a web URL instead of a local file in the sample parameter of the type provider.
 The following sample calls the <code>Load</code> method with an URL that points to a live market depth servlet on the BM Reports website.</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
@@ -138,8 +138,8 @@ be parsed as dates) while other columns are inferred as <code>decimal</code> or 
 
 <h3>Parsing Nuget package stats</h3>
 
-<p>This small sample shows how the HTML type provider can be used to scrape data from a website. In this case we analyze the download counts of the FSharp.Data package on nuget.
-Note that we're using the live url as the sample, so we can just use the default constructor as the runtime data will be the same as the compile time data.</p>
+<p>This small sample shows how the HTML Type Provider can be used to scrape data from a website. In this example we analyze the download counts of the FSharp.Data package on NuGet.
+Note that we're using the live URL as the sample, so we can just use the default constructor as the runtime data will be the same as the compile time data.</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l"> 1: </span>

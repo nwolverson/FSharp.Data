@@ -529,7 +529,7 @@ Consider the problem of flattening a data set. Let's say you have xml data that 
 <div class="tip" id="fs30">property XmlProvider&lt;...&gt;.Author.Born: Option&lt;int&gt;</div>
 <div class="tip" id="fs31">module Option<br /><br />from Microsoft.FSharp.Core</div>
 <div class="tip" id="fs32">val iter : action:(&#39;T -&gt; unit) -&gt; option:&#39;T option -&gt; unit<br /><br />Full name: Microsoft.FSharp.Core.Option.iter</div>
-<div class="tip" id="fs33">Multiple items<br />type Html = XmlProvider&lt;...&gt;<br /><br />Full name: XmlProvider.Html<br /><br />--------------------<br />type HtmlAttribute = | HtmlAttribute of name: string * value: string<br /><br />Full name: FSharp.Data.HtmlAttribute</div>
+<div class="tip" id="fs33">Multiple items<br />type Html = XmlProvider&lt;...&gt;<br /><br />Full name: XmlProvider.Html<br /><br />--------------------<br />type HtmlAttribute =<br />&#160;&#160;private | HtmlAttribute of name: string * value: string<br />&#160;&#160;static member New : name:string * value:string -&gt; HtmlAttribute<br /><br />Full name: FSharp.Data.HtmlAttribute</div>
 <div class="tip" id="fs34">val html : XmlProvider&lt;...&gt;.Div<br /><br />Full name: XmlProvider.html</div>
 <div class="tip" id="fs35">XmlProvider&lt;...&gt;.GetSample() : XmlProvider&lt;...&gt;.Div</div>
 <div class="tip" id="fs36">val printDiv : div:XmlProvider&lt;...&gt;.Div -&gt; unit<br /><br />Full name: XmlProvider.printDiv<br /><em><br /><br />&#160;Prints the content of a &lt;div&gt; element</em></div>
