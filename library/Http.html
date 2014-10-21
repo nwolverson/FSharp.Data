@@ -40,17 +40,17 @@
           
 <h1>F# Data: HTTP Utilities</h1>
 
-<p>The .NET library provides powerful API for creating and sending HTTP web requests.
+<p>The .NET library provides a powerful API for creating and sending HTTP web requests.
 There is a simple <code>WebClient</code> type (see <a href="http://msdn.microsoft.com/en-us/library/system.net.webclient.aspx">MSDN</a>) and a more flexible <code>HttpWebRequest</code>
 type (see <a href="http://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx">MSDN</a>). However, these two types are quite difficult to use if you
 want to quickly run a simple HTTP request and specify parameters such as method,
-HTTP POST data or additional headers.</p>
+HTTP POST data, or additional headers.</p>
 
 <p>The F# Data Library provides a simple <code>Http</code> type with four overloaded methods:
 <code>RequestString</code> and <code>AsyncRequestString</code>, that can be used to create a simple request and
 perform it synchronously or asynchronously, and <code>Request</code> and it's async companion <code>AsyncRequest</code> if
 you want to request binary files or you want to know more about the response like the status code,
-the response url, or the returned headers and cookies.</p>
+the response URL, or the returned headers and cookies.</p>
 
 <p>To use the type, we first need to reference the library using <code>#r</code> (in an F# interactive) 
 or add reference to a project. The type is located in <code>FSharp.Net</code> namespace:</p>
@@ -94,7 +94,7 @@ can use <code>Http.RequestString</code> and <code>Http.AsyncRequestString</code>
 </tr>
 </table>
 
-<p>In the rest of the documentation, we focus at the <code>RequestString</code> method, because
+<p>In the rest of the documentation, we focus on the <code>RequestString</code> method, because
 the use of <code>AsyncRequestString</code> is exactly the same.</p>
 
 <h2>Query parameters and headers</h2>
@@ -146,7 +146,7 @@ provide your API key:</p>
 </tr>
 </table>
 
-<p>The library supports simple and unchecked string based API (used in the previous example),
+<p>The library supports a simple and unchecked string based API (used in the previous example),
 but you can also use pre-defined header names to avoid spelling mistakes. The named headers
 are available in <code>HttpRequestHeaders</code> (and <code>HttpResponseHeaders</code>) modules, so you can either
 use the full name <code>HttpRequestHeaders.Accept</code>, or open the module and use just the short name
@@ -278,7 +278,7 @@ this behaviour by adding <code>content-type</code> to the list of headers using 
 </tr>
 </table>
 
-<h2>Maintaing cookies across requests</h2>
+<h2>Maintaining cookies across requests</h2>
 
 <p>If you want to maintain cookies between requests, you can specify the <code>cookieContainer</code> 
 parameter. The following example will request the MSDN documentation for the 
@@ -308,7 +308,7 @@ parameter. The following example will request the MSDN documentation for the
 </tr>
 </table>
 
-<p>If we now go to another MSDN page and click on a F# code sample, and then go 
+<p>If we go to another MSDN page and click on a F# code sample, and then go 
 back to the <code>HttpRequest</code> class documentation, while maintaining the same <code>cookieContainer</code>, 
 we will be presented with the F# code snippets:</p>
 

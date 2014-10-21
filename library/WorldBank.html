@@ -44,10 +44,10 @@
 financial and technical assistance to developing countries around the world. As one of the
 activities, the World Bank also collects development indicators and other data about
 countries in the world. The <a href="http://data.worldbank.org/">data catalog</a> contains over
-8000 indicators that can be programmatically accessed.</p>
+8,000 indicators that can be programmatically accessed.</p>
 
-<p>The WorldBank type provider makes the WorldBank data easily accessible to F# programs and
-scripts in a type safe way. This article provides an introduction. The type provider
+<p>The WorldBank Type Provider makes the WorldBank data easily accessible to F# programs and
+scripts in a type-safe manner. This article provides an introduction. The type provider
 is also used on the <a href="http://www.tryfsharp.org">Try F#</a> web site in the "Data Science" tutorial,
 so you can find more examples there.</p>
 
@@ -83,10 +83,10 @@ retrieves the percentage of population who attend universities in the UK:</p>
 </tr>
 </table>
 
-<p>When generating the data context, the WorldBank type provider retrieves the list of all
+<p>When generating the data context, the WorldBank Type Provider retrieves the list of all
 countries known to the WorldBank and the list of all supported indicators. Both of these
 dimensions are provided as properties, so you can use autocomplete to easily discover
-various data sources. Most of the indicators use longer name, so we need to wrap the name
+various data sources. Most of the indicators use longer names, so we need to wrap the name
 in <code>\</code>``.</p>
 
 <p>The result of the <code>School enrollment, tertiary (% gross)</code> property is a sequence with 
@@ -131,7 +131,7 @@ value as a Y value.</p>
 
 <h2>Using World Bank data asynchronously</h2>
 
-<p>If you need to download large amount of data or if you need to run the operation without
+<p>If you need to download large amounts of data or run the operation without
 blocking the caller, then you probably want to use F# asynchronous workflows to perform
 the operation. The F# Data Library also provides the <code>WorldBankDataProvider</code> type which takes
 a number of static parameters. If the <code>Asynchronous</code> parameter is set to <code>true</code> then the
@@ -159,7 +159,7 @@ produce the data.</p>
 <h3>Downloading data in parallel</h3>
 
 <p>To demonstrate the asynchronous version of the type provider, let's write code that
-downloads the university enrollement data about a number of countries in parallel.
+downloads the university enrollment data about a number of countries in parallel.
 We first create a data context and then define an array with some countries we want to 
 process:</p>
 
@@ -258,7 +258,7 @@ tutorial on Try F# uses the WorldBank type provider in numerous examples.</li>
 <div class="tip" id="fs11">type Chart =<br />&#160;&#160;static member Area : data:seq&lt;#value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member Area : data:seq&lt;#key * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member Bar : data:seq&lt;#value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member Bar : data:seq&lt;#key * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; GenericChart<br />&#160;&#160;static member BoxPlotFromData : data:seq&lt;#key * #seq&lt;&#39;a2&gt;&gt; * ?Name:string * ?Title:string * ?Color:Color * ?XTitle:string * ?YTitle:string * ?Percentile:int * ?ShowAverage:bool * ?ShowMedian:bool * ?ShowUnusualValues:bool * ?WhiskerPercentile:int -&gt; GenericChart (requires &#39;a2 :&gt; value)<br />&#160;&#160;static member BoxPlotFromStatistics : data:seq&lt;#key * #value * #value * #value * #value * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string * ?Percentile:int * ?ShowAverage:bool * ?ShowMedian:bool * ?ShowUnusualValues:bool * ?WhiskerPercentile:int -&gt; GenericChart<br />&#160;&#160;static member Bubble : data:seq&lt;#value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string * ?BubbleMaxSize:int * ?BubbleMinSize:int * ?BubbleScaleMax:float * ?BubbleScaleMin:float * ?UseSizeForLabel:bool -&gt; GenericChart<br />&#160;&#160;static member Bubble : data:seq&lt;#key * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string * ?BubbleMaxSize:int * ?BubbleMinSize:int * ?BubbleScaleMax:float * ?BubbleScaleMin:float * ?UseSizeForLabel:bool -&gt; GenericChart<br />&#160;&#160;static member Candlestick : data:seq&lt;#value * #value * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; CandlestickChart<br />&#160;&#160;static member Candlestick : data:seq&lt;#key * #value * #value * #value * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:Color * ?XTitle:string * ?YTitle:string -&gt; CandlestickChart<br />&#160;&#160;...<br /><br />Full name: FSharp.Charting.Chart</div>
 <div class="tip" id="fs12">static member Chart.Line : data:seq&lt;#value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:System.Drawing.Color * ?XTitle:string * ?YTitle:string -&gt; ChartTypes.GenericChart<br />static member Chart.Line : data:seq&lt;#key * #value&gt; * ?Name:string * ?Title:string * ?Labels:#seq&lt;string&gt; * ?Color:System.Drawing.Color * ?XTitle:string * ?YTitle:string -&gt; ChartTypes.GenericChart</div>
 <div class="tip" id="fs13">type WorldBank = WorldBankDataProvider&lt;...&gt;<br /><br />Full name: WorldBank.WorldBank</div>
-<div class="tip" id="fs14">type WorldBankDataProvider<br /><br />Full name: FSharp.Data.WorldBankDataProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of WorldBank data with additional configuration parameters. See http://www.worldbank.org for terms and conditions.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sources&#39;&gt;The World Bank data sources to include, separated by semicolons. Defaults to `World Development Indicators;Global Financial Development`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If an empty string is specified, includes all data sources.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Asynchronous&#39;&gt;Generate asynchronous calls. Defaults to false.&lt;/param&gt;</em></div>
+<div class="tip" id="fs14">type WorldBankDataProvider<br /><br />Full name: FSharp.Data.WorldBankDataProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of WorldBank data with additional configuration parameters. See http://www.worldbank.org for terms and conditions.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sources&#39;&gt;The World Bank data sources to include, separated by semicolons. Defaults to `World Development Indicators;Global Financial Development`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If an empty string is specified, includes all data sources.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Asynchronous&#39;&gt;Generate asynchronous calls. Defaults to false.&lt;/param&gt;</em></div>
 <div class="tip" id="fs15">WorldBankDataProvider&lt;...&gt;.GetDataContext() : WorldBankDataProvider&lt;...&gt;.ServiceTypes.WorldBankDataService</div>
 <div class="tip" id="fs16">val wb : WorldBankDataProvider&lt;...&gt;.ServiceTypes.WorldBankDataService<br /><br />Full name: WorldBank.wb</div>
 <div class="tip" id="fs17">val countries : WorldBankDataProvider&lt;...&gt;.ServiceTypes.Country []<br /><br />Full name: WorldBank.countries</div>

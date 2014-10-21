@@ -40,14 +40,14 @@
           
 <h1>F# Data: JSON Type Provider</h1>
 
-<p>This article demonstrates how to use the JSON type provider to access JSON files
-in a statically typed way. We first look how the structure is inferred and then 
+<p>This article demonstrates how to use the JSON Type Provider to access JSON files
+in a statically typed way. We first look at how the structure is inferred and then 
 demonstrate the provider by parsing data from WorldBank and Twitter.</p>
 
-<p>The JSON type provider provides a statically typed access to JSON documents.
+<p>The JSON Type Provider provides statically typed access to JSON documents.
 It takes a sample document as an input (or a document containing a JSON array of samples).
 The generated type can then be used to read files with the same structure. If the 
-loaded file does not match the structure of the sample, an runtime error may occur 
+loaded file does not match the structure of the sample, a runtime error may occur 
 (but only when accessing e.g. non-existing element).</p>
 
 <h2>Introducing the provider</h2>
@@ -70,10 +70,10 @@ is located in the <code>../../../bin</code> directory, we can load it in F# Inte
 <h3>Inferring types from the sample</h3>
 
 <p>The <code>JsonProvider&lt;...&gt;</code> takes one static parameter of type <code>string</code>. The parameter can 
-be <em>either</em> a sample string <em>or</em> a sample file (relatively to the current folder or online 
+be <em>either</em> a sample string <em>or</em> a sample file (relative to the current folder or online 
 accessible via <code>http</code> or <code>https</code>). It is not likely that this could lead to ambiguities.</p>
 
-<p>The following sample passes small JSON string to the provider:</p>
+<p>The following sample passes a small JSON string to the provider:</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -99,7 +99,7 @@ fields as properties (with PascalCase name to follow standard naming conventions
 
 <p>In the previous case, the sample document simply contained an integer and so the provider
 inferred the type <code>int</code>. Sometimes, the types in the sample document (or a list of samples) 
-may not exactly match. For example, a list may mix integers and floats:</p>
+may not match exactly. For example, a list may mix integers and floats:</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -142,15 +142,15 @@ to get values that match one of the types:</p>
 </tr>
 </table>
 
-<p>As you can see, the <code>Mixed</code> type has property <code>Numbers</code> and <code>Strings</code> that 
-return only <code>int</code> and <code>string</code> values from the collection. This means that we get a nice
+<p>As you can see, the <code>Mixed</code> type has properties <code>Numbers</code> and <code>Strings</code> that 
+return only <code>int</code> and <code>string</code> values from the collection. This means that we get 
 type-safe access to the values, but not in the original order (if order matters, then
 you can use the <code>mixed.JsonValue</code> property to get the underlying <code>JsonValue</code> and 
 process it dynamically as described in <a href="JsonValue.html">the documentation for <code>JsonValue</code></a>.</p>
 
 <h3>Inferring record types</h3>
 
-<p>Now, let's look at a sample JSON document that contains a list of records. The
+<p>Now let's look at a sample JSON document that contains a list of records. The
 following example uses two records - one with <code>name</code> and <code>age</code> and the second with just
 <code>name</code>. If a property is missing, then the provider infers it as optional.</p>
 
@@ -181,7 +181,7 @@ has properties <code>Name</code> and <code>Age</code>. As <code>Age</code> is no
 data set, it is inferred as <code>option&lt;int&gt;</code>. The above sample uses <code>Option.iter</code> to print
 the value only when it is available.</p>
 
-<p>In the previous case, the values of individual properties had common type - <code>string</code> 
+<p>In the previous case, the values of individual properties had common types - <code>string</code> 
 for the <code>Name</code> property and numeric type for <code>Age</code>. However, what if the property of
 a record can have multiple different types? In that case, the type provider behaves
 as follows:</p>
@@ -213,12 +213,12 @@ a type that has an optional property for each possible option, so we can use
 simple pattern matching on <code>option&lt;int&gt;</code> and <code>option&lt;string&gt;</code> values to distinguish
 between the two options. This is similar to the handling of heterogeneous arrays.</p>
 
-<p>Note that we have a <code>GetSamples</code> method because the sample is a json list. If it was a json
+<p>Note that we have a <code>GetSamples</code> method because the sample is a JSON list. If it was a JSON
 object, we would have a <code>GetSample</code> method instead.</p>
 
 <h2>Loading WorldBank data</h2>
 
-<p>Let's now use the type provider to process some real data. We use a data set returned by 
+<p>Now let's use the type provider to process some real data. We use a data set returned by 
 <a href="http://data.worldbank.org">the WorldBank</a>, which has (roughly) the following structure:</p>
 
 <table class="pre"><tr><td><pre lang="js">[ { <span class="s">"page"</span>: 1, <span class="s">"pages"</span>: 1, <span class="s">"total"</span>: 53 },
@@ -455,7 +455,7 @@ static parameter <code>EmbeddedResource</code>. If you are building a library <c
 </table>
 
 <p>You still need to specify the local path, but this is only used when compiling <code>MyLib.dll</code>. 
-When a user of your library references <code>MyLib.dll</code> later, the JSON type provider will be able
+When a user of your library references <code>MyLib.dll</code> later, the JSON Type Provider will be able
 to load <code>MyLib.dll</code> and locate the sample <code>worldbank.json</code> as a resource of the library. When
 this succeeds, it does not attempt to find the local file and so your library can be used
 without providing a local copy of the sample JSON files.</p>
@@ -472,7 +472,7 @@ working with JSON values dynamically.</li>
 <div class="tip" id="fs1">namespace FSharp</div>
 <div class="tip" id="fs2">namespace FSharp.Data</div>
 <div class="tip" id="fs3">type Simple = JsonProvider&lt;...&gt;<br /><br />Full name: JsonProvider.Simple</div>
-<div class="tip" id="fs4">type JsonProvider<br /><br />Full name: FSharp.Data.JsonProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of a JSON document.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sample&#39;&gt;Location of a JSON sample file or a string containing a sample JSON document.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;SampleIsList&#39;&gt;If true, sample should be a list of individual samples for the inference.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;RootName&#39;&gt;The name to be used to the root type. Defaults to `Root`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Culture&#39;&gt;The culture used for parsing numbers and dates. Defaults to the invariant culture.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Encoding&#39;&gt;The encoding used to read the sample. You can specify either the character set name or the codepage number. Defaults to UTF8 for files, and to ISO-8859-1 the for HTTP requests, unless `charset` is specified in the `Content-Type` response header.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;ResolutionFolder&#39;&gt;A directory that is used when resolving relative file references (at design time and in hosted execution).&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;EmbeddedResource&#39;&gt;When specified, the type provider first attempts to load the sample from the specified resource <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. &#39;MyCompany.MyAssembly, resource_name.json&#39;). This is useful when exposing types generated by the type provider.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;InferTypesFromValues&#39;&gt;If true, turns on additional type inference from values. <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. type inference infers string values such as &quot;123&quot; as ints and values constrained to 0 and 1 as booleans.)&lt;/param&gt;</em></div>
+<div class="tip" id="fs4">type JsonProvider<br /><br />Full name: FSharp.Data.JsonProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of a JSON document.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sample&#39;&gt;Location of a JSON sample file or a string containing a sample JSON document.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;SampleIsList&#39;&gt;If true, sample should be a list of individual samples for the inference.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;RootName&#39;&gt;The name to be used to the root type. Defaults to `Root`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Culture&#39;&gt;The culture used for parsing numbers and dates. Defaults to the invariant culture.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Encoding&#39;&gt;The encoding used to read the sample. You can specify either the character set name or the codepage number. Defaults to UTF8 for files, and to ISO-8859-1 the for HTTP requests, unless `charset` is specified in the `Content-Type` response header.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;ResolutionFolder&#39;&gt;A directory that is used when resolving relative file references (at design time and in hosted execution).&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;EmbeddedResource&#39;&gt;When specified, the type provider first attempts to load the sample from the specified resource <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. &#39;MyCompany.MyAssembly, resource_name.json&#39;). This is useful when exposing types generated by the type provider.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;InferTypesFromValues&#39;&gt;If true, turns on additional type inference from values. <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. type inference infers string values such as &quot;123&quot; as ints and values constrained to 0 and 1 as booleans.)&lt;/param&gt;</em></div>
 <div class="tip" id="fs5">val simple : JsonProvider&lt;...&gt;.Root<br /><br />Full name: JsonProvider.simple</div>
 <div class="tip" id="fs6">JsonProvider&lt;...&gt;.Parse(text: string) : JsonProvider&lt;...&gt;.Root<br /><em><br /><br />Parses the specified JSON string</em></div>
 <div class="tip" id="fs7">property JsonProvider&lt;...&gt;.Root.Age: int</div>
@@ -547,7 +547,7 @@ working with JSON values dynamically.</li>
 <div class="tip" id="fs76">val issueSample : string<br /><br />Full name: JsonProvider.issueSample</div>
 <div class="tip" id="fs77">type GitHubIssue = JsonProvider&lt;...&gt;<br /><br />Full name: JsonProvider.GitHubIssue</div>
 <div class="tip" id="fs78">val newIssue : JsonProvider&lt;...&gt;.Issue<br /><br />Full name: JsonProvider.newIssue</div>
-<div class="tip" id="fs79">type Issue =<br />&#160;&#160;inherit IJsonDocument<br />&#160;&#160;new : title: string * body: string * assignee: string * milestone: int * labels: string [] -&gt; Issue + 1 overload<br />&#160;&#160;member Assignee : string<br />&#160;&#160;member Body : string<br />&#160;&#160;member JsonValue : JsonValue<br />&#160;&#160;member Labels : string []<br />&#160;&#160;member Milestone : int<br />&#160;&#160;member Title : string<br /><br />Full name: FSharp.Data.JsonProvider,Sample=&quot;<br />{<br />&#160;&#160;\&quot;title\&quot;: \&quot;Found a bug\&quot;,<br />&#160;&#160;\&quot;body\&quot;: \&quot;I&#39;m having a problem with this.\&quot;,<br />&#160;&#160;\&quot;assignee\&quot;: \&quot;octocat\&quot;,<br />&#160;&#160;\&quot;milestone\&quot;: 1,<br />&#160;&#160;\&quot;labels\&quot;: [<br />&#160;&#160;&#160;&#160;\&quot;Label1\&quot;,<br />&#160;&#160;&#160;&#160;\&quot;Label2\&quot;<br />&#160;&#160;]<br />}<br />&quot;,RootName=&quot;issue&quot;.Issue</div>
+<div class="tip" id="fs79">type Issue =<br />&#160;&#160;inherit IJsonDocument<br />&#160;&#160;new : title: string * body: string * assignee: string * milestone: int * labels: string [] -&gt; Issue + 1 overload<br />&#160;&#160;member Assignee : string<br />&#160;&#160;member Body : string<br />&#160;&#160;member JsonValue : JsonValue<br />&#160;&#160;member Labels : string []<br />&#160;&#160;member Milestone : int<br />&#160;&#160;member Title : string<br /><br />Full name: FSharp.Data.JsonProvider,Sample=&quot;<br />{<br />&#160;&#160;\&quot;title\&quot;: \&quot;Found a bug\&quot;,<br />&#160;&#160;\&quot;body\&quot;: \&quot;I&#39;m having a problem with this.\&quot;,<br />&#160;&#160;\&quot;assignee\&quot;: \&quot;octocat\&quot;,<br />&#160;&#160;\&quot;milestone\&quot;: 1,<br />&#160;&#160;\&quot;labels\&quot;: [<br />&#160;&#160;&#160;&#160;\&quot;Label1\&quot;,<br />&#160;&#160;&#160;&#160;\&quot;Label2\&quot;<br />&#160;&#160;]<br />}<br />&quot;,RootName=&quot;issue&quot;.Issue</div>
 <div class="tip" id="fs80">property Runtime.IJsonDocument.JsonValue: JsonValue</div>
 <div class="tip" id="fs81">member JsonValue.Request : uri:string * ?httpMethod:string * ?headers:seq&lt;string * string&gt; -&gt; HttpResponse</div>
 <div class="tip" id="fs82">type WB = JsonProvider&lt;...&gt;<br /><br />Full name: JsonProvider.WB</div>

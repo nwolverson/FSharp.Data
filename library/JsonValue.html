@@ -85,7 +85,7 @@ to parse strings formatted using JSON as follows:</p>
 </table>
 
 <p>The parsed value can be processed using pattern matching - the <code>JsonValue</code> type
-is a discriminated union with cases such as <code>Record</code>, <code>Collection</code> and other that
+is a discriminated union with cases such as <code>Record</code>, <code>Collection</code> and others that
 can be used to examine the structure.</p>
 
 <h2>Using JSON extensions</h2>
@@ -95,15 +95,15 @@ of extensions that become available after opening the <code>FSharp.Data.JsonExte
 namespace. Once opened, we can write:</p>
 
 <ul>
-<li><code>value.AsBoolean()</code> returns the value as boolean if it is either <code>true</code> or <code>false</code></li>
+<li><code>value.AsBoolean()</code> returns the value as boolean if it is either <code>true</code> or <code>false</code>.</li>
 <li><code>value.AsInteger()</code> returns the value as integer if it is numeric and can be
 converted to an integer; <code>value.AsInteger64()</code>, <code>value.AsDecimal()</code> and
 <code>value.AsFloat()</code> behave similarly.</li>
-<li><code>value.AsString()</code> returns the value as a string</li>
-<li><code>value.AsDateTime()</code> parse the string as a <code>DateTime</code> value using either the
+<li><code>value.AsString()</code> returns the value as a string.</li>
+<li><code>value.AsDateTime()</code> parses the string as a <code>DateTime</code> value using either the
 <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format, or using the
 <code>\/Date(...)\/</code> JSON format containing number of milliseconds since 1/1/1970.</li>
-<li><code>value.AsGuid()</code> parse the string as a <code>Guid</code> value.</li>
+<li><code>value.AsGuid()</code> parses the string as a <code>Guid</code> value.</li>
 <li><code>value?child</code> uses the dynamic operator to obtain a record member named <code>child</code>;
 alternatively, you can also use <code>value.GetProperty(child)</code> or an indexer
 <code>value.[child]</code>.</li>
@@ -111,11 +111,11 @@ alternatively, you can also use <code>value.GetProperty(child)</code> or an inde
 (if the member is missing or the value is not a record then, <code>TryGetProperty</code>
 returns <code>None</code>).</li>
 <li><code>[ for v in value -&gt; v ]</code> treats <code>value</code> as a collection and iterates over it;
-alternatively, it is possible to cobtain all elements as an array using
+alternatively, it is possible to obtain all elements as an array using
 <code>value.AsArray()</code>.</li>
-<li><code>value.Properties()</code> returns a list of all properties of a record node</li>
+<li><code>value.Properties()</code> returns a list of all properties of a record node.</li>
 <li><code>value.InnerText()</code> concatenates all text or text in an array 
-(representing e.g. multi-line string)</li>
+(representing e.g. multi-line string).</li>
 </ul>
 
 <p>Methods that may need to parse a numeric value or date (such as <code>AsFloat</code> and
@@ -169,7 +169,7 @@ a WorldBank request (you can access the WorldBank data more conveniently using
       <span class="s">"country"</span>: {<span class="s">"id"</span>:<span class="s">"CZ"</span>,<span class="s">"value"</span>:<span class="s">"Czech Republic"</span>},
       <span class="s">"value"</span>:<span class="s">"16.6567773464055"</span>,<span class="s">"decimal"</span>:<span class="s">"1"</span>,<span class="s">"date"</span>:<span class="s">"2010"</span>} ] ]</pre></td></tr></table>
 
-<p>The document is formed by an array that contains record as the first element
+<p>The document is formed by an array that contains a record as the first element
 and a collection of data points as the second element. The following code
 reads the document and parses it:</p>
 

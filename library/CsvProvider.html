@@ -93,7 +93,7 @@ get a strongly typed view of the file:</p>
 <p>The generated type provides two static methods for loading data. The <code>Parse</code> method can be
 used if we have the data in a <code>string</code> value. The <code>Load</code> method allows reading the data from
 a file or from a web resource (and there's also an asynchronous <code>AsyncLoad</code> version). We could also
-have used a web url instead of a local file in the sample parameter of the type provider.
+have used a web URL instead of a local file in the sample parameter of the type provider.
 The following sample calls the <code>Load</code> method with an URL that points to a live CSV file on the Yahoo finance web site:</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
@@ -174,7 +174,7 @@ of MSFT stocks changes since the company was founded:</p>
 
 <p><img src="/FSharp.Data/images/chart1.png" alt="Chart" /></p>
 
-<p>As a one more example, we use the <code>Candlestick</code> chart to get a more detailed look at the
+<p>As one more example, we use the <code>Candlestick</code> chart to get a more detailed look at the
 data over the last month:</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
@@ -249,7 +249,7 @@ so we use the <code>GetSample</code> method instead of calling <code>Load</code>
 </tr>
 </table>
 
-<p>but the VisualStudio intellisense for the type provider parameters doesn't work when we use a default
+<p>but the VisualStudio IntelliSense for the type provider parameters doesn't work when we use a default
 constructor for a type provider, so we'll keep using <code>GetSample</code> instead.</p>
 
 <p>As in the previous example, the <code>small</code> value exposes the rows using the <code>Rows</code> property.
@@ -277,7 +277,7 @@ following simple calculation:</p>
 </table>
 
 <p>The numerical values of <code>Distance</code> and <code>Time</code> are both inferred as <code>decimal</code> (because they
-are small enough). Thus the type of <code>speed</code> becomes <code>decimal&lt;meter/second&gt;</code>. The compiler
+are small enough). Thus the type of <code>speed</code> becomes <code>decimal&lt;metre/second&gt;</code>. The compiler
 can then statically check that we're not comparing incompatible values - e.g. number in
 meters per second against a value in kilometres per hour.</p>
 
@@ -359,8 +359,8 @@ rows separated by either semicolon or a colon. You can use:
 
 <p>It is quite common in statistical datasets for some values to be missing. If
 you open the <a href="../data/AirQuality.csv"><code>data/AirQuality.csv</code></a> file you will see
-that some values for the Ozone observations are marked <code>#N/A</code>. Such values are
-parsed as float and will in F# be marked with <code>Double.NaN</code>. The values <code>#N/A</code>, <code>NA</code>,
+that some values for the ozone observations are marked <code>#N/A</code>. Such values are
+parsed as float and will be marked with <code>Double.NaN</code> in F#. The values <code>#N/A</code>, <code>NA</code>,
 and <code>:</code> are recognized as missing values by default, but you can customize it by specifying
 the <code>MissingValues</code> static parameter of <code>CsvProvider</code>.</p>
 
@@ -398,7 +398,7 @@ it by specifying the <code>InferRows</code> static parameter of <code>CsvProvide
 <p>Columns with only <code>0</code>, <code>1</code>, <code>Yes</code>, <code>No</code>, <code>True</code>, or <code>False</code> will be set to <code>bool</code>. Columns with numerical values
 will be set to either <code>int</code>, <code>int64</code>, <code>decimal</code>, or <code>float</code>, in that order of preference.</p>
 
-<p>If in any row a value is missing, by default the CSV type provider will infer a nullable (for <code>int</code> and <code>int64</code>) or an optional
+<p>If a value is missing in any row, by default the CSV type provider will infer a nullable (for <code>int</code> and <code>int64</code>) or an optional
 (for <code>bool</code>, <code>DateTime</code> and <code>Guid</code>). When a <code>decimal</code> would be inferred but there are missing values, we will infer a
 <code>float</code> instead, and use <code>Double.NaN</code> to represent those missing values. The <code>string</code> type is already inherently nullable,
 so by default we won't generate a <code>string option</code>. If you prefer to use optionals in all cases, you can set the static parameter
@@ -538,7 +538,7 @@ sequence of rows exposed via the <code>Rows</code> property directly.</p>
 
 <p>By default, the rows are cached so you can iterate over the <code>Rows</code> property multiple times without worrying.
 But if you will only iterate once, you can disable caching by setting the <code>CacheRows</code> static parameter of <code>CsvProvider</code>
-to <code>false</code> . If the number of rows is very big, you have to do this otherwise you may exhaust the memory.
+to <code>false</code>. If the number of rows is very big, you have to do this otherwise you may exhaust the memory.
 You can still cache the data at some point by using the <code>Cache</code> method, but only do that if you have already
 transformed the dataset to be smaller:</p>
 
@@ -566,7 +566,7 @@ working with CSV documents dynamically.</li>
 <div class="tip" id="fs1">namespace FSharp</div>
 <div class="tip" id="fs2">namespace FSharp.Data</div>
 <div class="tip" id="fs3">type Stocks = CsvProvider&lt;...&gt;<br /><br />Full name: CsvProvider.Stocks</div>
-<div class="tip" id="fs4">type CsvProvider<br /><br />Full name: FSharp.Data.CsvProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of a CSV file.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sample&#39;&gt;Location of a CSV sample file or a string containing a sample CSV document.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Separators&#39;&gt;Column delimiter(s). Defaults to `,`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;InferRows&#39;&gt;Number of rows to use for inference. Defaults to `1000`. If this is zero, all rows are used.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Schema&#39;&gt;Optional column types, in a comma separated list. Valid types are `int`, `int64`, `bool`, `float`, `decimal`, `date`, `guid`, `string`, `int?`, `int64?`, `bool?`, `float?`, `decimal?`, `date?`, `guid?`, `int option`, `int64 option`, `bool option`, `float option`, `decimal option`, `date option`, `guid option` and `string option`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;You can also specify a unit and the name of the column like this: `Name (type&amp;lt;unit&amp;gt;)`, or you can override only the name. If you don&#39;t want to specify all the columns, you can reference the columns by name like this: `ColumnName=type`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;HasHeaders&#39;&gt;Whether the sample contains the names of the columns as its first line.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;IgnoreErrors&#39;&gt;Whether to ignore rows that have the wrong number of columns or which can&#39;t be parsed using the inferred or specified schema. Otherwise an exception is thrown when these rows are encountered.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;AssumeMissingValues&#39;&gt;When set to true, the type provider will assume all columns can have missing values, even if in the provided sample all values are present. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;PreferOptionals&#39;&gt;When set to true, inference will prefer to use the option type instead of nullable types, `double.NaN` or `&quot;&quot;` for missing values. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Quote&#39;&gt;The quotation mark (for surrounding values containing the delimiter). Defaults to `&quot;`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;MissingValues&#39;&gt;The set of strings recogized as missing values. Defaults to `NaN,NA,#N/A,:,-,TBA,TBD`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;CacheRows&#39;&gt;Whether the rows should be caches so they can be iterated multiple times. Defaults to true. Disable for large datasets.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Culture&#39;&gt;The culture used for parsing numbers and dates. Defaults to the invariant culture.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Encoding&#39;&gt;The encoding used to read the sample. You can specify either the character set name or the codepage number. Defaults to UTF8 for files, and to ISO-8859-1 the for HTTP requests, unless `charset` is specified in the `Content-Type` response header.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;ResolutionFolder&#39;&gt;A directory that is used when resolving relative file references (at design time and in hosted execution).&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;EmbeddedResource&#39;&gt;When specified, the type provider first attempts to load the sample from the specified resource <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. &#39;MyCompany.MyAssembly, resource_name.csv&#39;). This is useful when exposing types generated by the type provider.&lt;/param&gt;</em></div>
+<div class="tip" id="fs4">type CsvProvider<br /><br />Full name: FSharp.Data.CsvProvider<br /><em><br /><br />&lt;summary&gt;Typed representation of a CSV file.&lt;/summary&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Sample&#39;&gt;Location of a CSV sample file or a string containing a sample CSV document.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Separators&#39;&gt;Column delimiter(s). Defaults to `,`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;InferRows&#39;&gt;Number of rows to use for inference. Defaults to `1000`. If this is zero, all rows are used.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Schema&#39;&gt;Optional column types, in a comma separated list. Valid types are `int`, `int64`, `bool`, `float`, `decimal`, `date`, `guid`, `string`, `int?`, `int64?`, `bool?`, `float?`, `decimal?`, `date?`, `guid?`, `int option`, `int64 option`, `bool option`, `float option`, `decimal option`, `date option`, `guid option` and `string option`.<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;You can also specify a unit and the name of the column like this: `Name (type&amp;lt;unit&amp;gt;)`, or you can override only the name. If you don&#39;t want to specify all the columns, you can reference the columns by name like this: `ColumnName=type`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;HasHeaders&#39;&gt;Whether the sample contains the names of the columns as its first line.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;IgnoreErrors&#39;&gt;Whether to ignore rows that have the wrong number of columns or which can&#39;t be parsed using the inferred or specified schema. Otherwise an exception is thrown when these rows are encountered.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;AssumeMissingValues&#39;&gt;When set to true, the type provider will assume all columns can have missing values, even if in the provided sample all values are present. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;PreferOptionals&#39;&gt;When set to true, inference will prefer to use the option type instead of nullable types, `double.NaN` or `&quot;&quot;` for missing values. Defaults to false.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Quote&#39;&gt;The quotation mark (for surrounding values containing the delimiter). Defaults to `&quot;`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;MissingValues&#39;&gt;The set of strings recogized as missing values. Defaults to `NaN,NA,#N/A,:,-,TBA,TBD`.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;CacheRows&#39;&gt;Whether the rows should be caches so they can be iterated multiple times. Defaults to true. Disable for large datasets.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Culture&#39;&gt;The culture used for parsing numbers and dates. Defaults to the invariant culture.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;Encoding&#39;&gt;The encoding used to read the sample. You can specify either the character set name or the codepage number. Defaults to UTF8 for files, and to ISO-8859-1 the for HTTP requests, unless `charset` is specified in the `Content-Type` response header.&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;ResolutionFolder&#39;&gt;A directory that is used when resolving relative file references (at design time and in hosted execution).&lt;/param&gt;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;param name=&#39;EmbeddedResource&#39;&gt;When specified, the type provider first attempts to load the sample from the specified resource <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(e.g. &#39;MyCompany.MyAssembly, resource_name.csv&#39;). This is useful when exposing types generated by the type provider.&lt;/param&gt;</em></div>
 <div class="tip" id="fs5">val msft : CsvProvider&lt;...&gt;<br /><br />Full name: CsvProvider.msft</div>
 <div class="tip" id="fs6">CsvProvider&lt;...&gt;.Load(uri: string) : CsvProvider&lt;...&gt;<br /><em><br /><br />Loads CSV from the specified uri</em><br />CsvProvider&lt;...&gt;.Load(reader: System.IO.TextReader) : CsvProvider&lt;...&gt;<br /><em><br /><br />Loads CSV from the specified reader</em><br />CsvProvider&lt;...&gt;.Load(stream: System.IO.Stream) : CsvProvider&lt;...&gt;<br /><em><br /><br />Loads CSV from the specified stream</em></div>
 <div class="tip" id="fs7">val firstRow : CsvProvider&lt;...&gt;.Row<br /><br />Full name: CsvProvider.firstRow</div>

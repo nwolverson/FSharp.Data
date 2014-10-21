@@ -59,10 +59,10 @@ independently of the actual HTML Type provider.</p>
 </tr>
 </table>
 
-<p>The following example uses google to search for <code>FSharp.Data</code> then parses the first set of
-search results from the page, extracting the URL and the Title of the link.</p>
+<p>The following example uses Google to search for <code>FSharp.Data</code> then parses the first set of
+search results from the page, extracting the URL and Title of the link.</p>
 
-<p>To acheive this we must first parse the webpage into our DOM. We can do this using
+<p>To achieve this we must first parse the webpage into our DOM. We can do this using
 the <code>HtmlDocument.Load</code> method. This method will take a URL and make a synchronous web call
 to extract the data from the page. Note: an asynchronous variant <code>HtmlDocument.AsyncLoad</code> is also available</p>
 
@@ -76,10 +76,10 @@ to extract the data from the page. Note: an asynchronous variant <code>HtmlDocum
 </tr>
 </table>
 
-<p>Now we have a loaded HTML document we can begin to extract data from it. 
-Firstly we want to extract all of the anchor tags <code>a</code> out of the document then
-inspect the links to see if it has a <code>href</code> attribute, if it does extract the value
-which in this case is the url that the search result is pointing to and additionally the 
+<p>Now that we have a loaded HTML document we can begin to extract data from it. 
+Firstly we want to extract all of the anchor tags <code>a</code> out of the document, then
+inspect the links to see if it has a <code>href</code> attribute. If it does, extract the value,
+which in this case is the url that the search result is pointing to, and additionally the 
 <code>InnerText</code> of the anchor tag to provide the name of the web page for the search result
 we are looking at.</p>
 
@@ -103,11 +103,11 @@ we are looking at.</p>
 </tr>
 </table>
 
-<p>Now we have extracted our search results you will notice that there lots of
-other links to various google services and cached/similar results ideally we would 
+<p>Now that we have extracted our search results you will notice that there are lots of
+other links to various Google services and cached/similar results. Ideally we would 
 like to filter these results as we are probably not interested in them.
-At this point we simply have a sequence of Tuples so F# makes this trivial, using <code>Seq.filter</code>
-and <code>Seq.map</code></p>
+At this point we simply have a sequence of Tuples, so F# makes this trivial using <code>Seq.filter</code>
+and <code>Seq.map</code>.</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -138,24 +138,24 @@ and <code>Seq.map</code></p>
   ("Microsoft.FSharp.Data.TypeProviders Namespace (F#) - MSDN",
    "http://msdn.microsoft.com/en-GB/library/hh362324.aspx");
   ("Data Access | The F# Software Foundation", "http://fsharp.org/data-access/");
-  ("Data Science | The F# Software Foundation",
-   "http://fsharp.org/data-science/");
   ("F# Data: New type provider library - Tomas Petricek",
    "http://tomasp.net/blog/fsharp-data.aspx/");
   ("Newest 'f#-data' Questions - Stack Overflow",
    "http://stackoverflow.com/questions/tagged/f%2523-data");
   ("FSharp.Data.SqlClient: Seamlessly integrating T-SQL and F# in the ...",
    "http://blogs.msdn.com/b/fsharpteam/archive/2014/05/23/fsharp-data-sqlclient-seamlessly-integrating-sql-and-f-in-the-same-code-base-guest-post.aspx");
-  ("FSharp.Data (@FSharpData) | Twitter", "https://twitter.com/FSharpData")|]
+  ("FSharp.Data (@FSharpData) | Twitter", "https://twitter.com/FSharpData");
+  ("F Sharp Programming/Basic Concepts - Wikibooks, open books for ...",
+   "http://en.wikibooks.org/wiki/F_Sharp_Programming/Basic_Concepts")|]
 </code></pre></td></tr></table>
 
 <div class="tip" id="fs1">namespace FSharp</div>
 <div class="tip" id="fs2">namespace FSharp.Data</div>
 <div class="tip" id="fs3">val results : HtmlDocument<br /><br />Full name: HtmlParser.results</div>
-<div class="tip" id="fs4">Multiple items<br />module HtmlDocument<br /><br />from FSharp.Data<br /><br />--------------------<br />type HtmlDocument =<br />&#160;&#160;private | HtmlDocument of docType: string * elements: HtmlNode list<br />&#160;&#160;override ToString : unit -&gt; string<br />&#160;&#160;member _Print : string<br />&#160;&#160;static member New : docType:string * children:seq&lt;HtmlNode&gt; -&gt; HtmlDocument<br /><br />Full name: FSharp.Data.HtmlDocument</div>
-<div class="tip" id="fs5">static member HtmlDocument.Load : stream:System.IO.Stream -&gt; HtmlDocument<br />static member HtmlDocument.Load : reader:System.IO.TextReader -&gt; HtmlDocument<br />static member HtmlDocument.Load : uri:string -&gt; HtmlDocument</div>
+<div class="tip" id="fs4">Multiple items<br />module HtmlDocument<br /><br />from FSharp.Data<br /><br />--------------------<br />type HtmlDocument =<br />&#160;&#160;private | HtmlDocument of docType: string * elements: HtmlNode list<br />&#160;&#160;override ToString : unit -&gt; string<br />&#160;&#160;member _Print : string<br />&#160;&#160;static member AsyncLoad : uri:string -&gt; Async&lt;HtmlDocument&gt;<br />&#160;&#160;static member Load : uri:string -&gt; HtmlDocument<br />&#160;&#160;static member Load : reader:TextReader -&gt; HtmlDocument<br />&#160;&#160;static member Load : stream:Stream -&gt; HtmlDocument<br />&#160;&#160;static member New : children:seq&lt;HtmlNode&gt; -&gt; HtmlDocument<br />&#160;&#160;static member New : docType:string * children:seq&lt;HtmlNode&gt; -&gt; HtmlDocument<br />&#160;&#160;static member Parse : text:string -&gt; HtmlDocument<br /><br />Full name: FSharp.Data.HtmlDocument</div>
+<div class="tip" id="fs5">static member HtmlDocument.Load : uri:string -&gt; HtmlDocument<br />static member HtmlDocument.Load : reader:System.IO.TextReader -&gt; HtmlDocument<br />static member HtmlDocument.Load : stream:System.IO.Stream -&gt; HtmlDocument</div>
 <div class="tip" id="fs6">val links : seq&lt;string * string&gt;<br /><br />Full name: HtmlParser.links</div>
-<div class="tip" id="fs7">static member HtmlDocumentExtensions.Descendants : d:HtmlDocument * ?f:(HtmlNode -&gt; bool) * ?recurseOnMatch:bool -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : d:HtmlDocument * names:seq&lt;string&gt; * ?recurseOnMatch:bool -&gt; HtmlNode list</div>
+<div class="tip" id="fs7">static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * names:seq&lt;string&gt; -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * name:string -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) * recurseOnMatch:bool -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * names:seq&lt;string&gt; * recurseOnMatch:bool -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * name:string * recurseOnMatch:bool -&gt; HtmlNode list</div>
 <div class="tip" id="fs8">module Seq<br /><br />from Microsoft.FSharp.Collections</div>
 <div class="tip" id="fs9">val choose : chooser:(&#39;T -&gt; &#39;U option) -&gt; source:seq&lt;&#39;T&gt; -&gt; seq&lt;&#39;U&gt;<br /><br />Full name: Microsoft.FSharp.Collections.Seq.choose</div>
 <div class="tip" id="fs10">val x : HtmlNode</div>
@@ -164,7 +164,7 @@ and <code>Seq.map</code></p>
 <div class="tip" id="fs13">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; option:&#39;T option -&gt; &#39;U option<br /><br />Full name: Microsoft.FSharp.Core.Option.map</div>
 <div class="tip" id="fs14">val a : HtmlAttribute</div>
 <div class="tip" id="fs15">static member HtmlNodeExtensions.InnerText : n:HtmlNode -&gt; string</div>
-<div class="tip" id="fs16">static member HtmlAttributeExtensions.Value : attr:HtmlAttribute -&gt; string<br />static member HtmlAttributeExtensions.Value : attr:HtmlAttribute * parseF:(string -&gt; &#39;a) -&gt; &#39;a<br />static member HtmlAttributeExtensions.Value : attr:HtmlAttribute * defaultValue:&#39;a * parseF:(string -&gt; bool * &#39;a) -&gt; &#39;a</div>
+<div class="tip" id="fs16">static member HtmlAttributeExtensions.Value : attr:HtmlAttribute -&gt; string</div>
 <div class="tip" id="fs17">val searchResults : (string * string) []<br /><br />Full name: HtmlParser.searchResults</div>
 <div class="tip" id="fs18">val filter : predicate:(&#39;T -&gt; bool) -&gt; source:seq&lt;&#39;T&gt; -&gt; seq&lt;&#39;T&gt;<br /><br />Full name: Microsoft.FSharp.Collections.Seq.filter</div>
 <div class="tip" id="fs19">val name : string</div>

@@ -46,6 +46,23 @@
 </div>
 
 <!-- Render nested types and modules, if there are any -->
+  <h2>Nested types and modules</h2>
+  <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="fsharp-data-runtime-htmlinference-parameters.html">Parameters</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
 
   <h3>Functions and values</h3>
   <table class="table table-bordered member-list">
@@ -56,15 +73,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '144', 144)" onmouseover="showTip(event, '144', 144)">
+          <code onmouseout="hideTip(event, '136', 136)" onmouseover="showTip(event, '136', 136)">
             inferColumns (...)
           </code>
-          <div class="tip" id="144">
-            <strong>Signature:</strong> preferOptionals:bool -&gt; missingValues:string [] -&gt; cultureInfo:CultureInfo -&gt; headerNamesAndUnits:(string * Type option) [] -&gt; rows:seq&lt;string []&gt; -&gt; PrimitiveInferedProperty list<br />
+          <div class="tip" id="136">
+            <strong>Signature:</strong> parameters:Parameters -&gt; headerNamesAndUnits:(string * Type option) [] -&gt; rows:seq&lt;string []&gt; -&gt; PrimitiveInferedProperty list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlInference.fs#L8-8" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlInference.fs#L16-16" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -74,15 +91,33 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '145', 145)" onmouseover="showTip(event, '145', 145)">
-            inferHeaders (...)
+          <code onmouseout="hideTip(event, '137', 137)" onmouseover="showTip(event, '137', 137)">
+            inferHeaders parameters rows
           </code>
-          <div class="tip" id="145">
-            <strong>Signature:</strong> missingValues:string [] -&gt; cultureInfo:CultureInfo -&gt; rows:string [] [] -&gt; int * string [] option<br />
+          <div class="tip" id="137">
+            <strong>Signature:</strong> parameters:Parameters -&gt; rows:string [] [] -&gt; bool * string [] option * Type option [] option * PrimitiveInferedProperty list option<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlInference.fs#L16-16" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlInference.fs#L24-24" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '138', 138)" onmouseover="showTip(event, '138', 138)">
+            inferListType parameters values
+          </code>
+          <div class="tip" id="138">
+            <strong>Signature:</strong> parameters:Parameters -&gt; values:seq&lt;string&gt; -&gt; InferedType<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlInference.fs#L39-39" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

@@ -52,15 +52,15 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '233', 233)" onmouseover="showTip(event, '233', 233)">
-            Body(d)
+          <code onmouseout="hideTip(event, '226', 226)" onmouseover="showTip(event, '226', 226)">
+            Body(doc)
           </code>
-          <div class="tip" id="233">
-            <strong>Signature:</strong> d:HtmlDocument -&gt; HtmlNode<br />
+          <div class="tip" id="226">
+            <strong>Signature:</strong> doc:HtmlDocument -&gt; HtmlNode<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L541-541" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L751-751" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -72,15 +72,74 @@ this throws an exception if no body element exists.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '234', 234)" onmouseover="showTip(event, '234', 234)">
-            Descendants(d, names, recurseOnMatch)
+          <code onmouseout="hideTip(event, '227', 227)" onmouseover="showTip(event, '227', 227)">
+            Descendants(doc, name)
           </code>
-          <div class="tip" id="234">
-            <strong>Signature:</strong> (d:HtmlDocument * names:seq&lt;string&gt; * recurseOnMatch:bool option) -&gt; HtmlNode list<br />
+          <div class="tip" id="227">
+            <strong>Signature:</strong> (doc:HtmlDocument * name:string) -&gt; HtmlNode list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L564-564" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L679-679" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Finds all of the descendant nodes of this document that match the given name
+Recurses on match</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '228', 228)" onmouseover="showTip(event, '228', 228)">
+            Descendants(doc, name, recurseOnMatch)
+          </code>
+          <div class="tip" id="228">
+            <strong>Signature:</strong> (doc:HtmlDocument * name:string * recurseOnMatch:bool) -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L670-670" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Finds all of the descendant nodes of this document that match the given name</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '229', 229)" onmouseover="showTip(event, '229', 229)">
+            Descendants(doc, names)
+          </code>
+          <div class="tip" id="229">
+            <strong>Signature:</strong> (doc:HtmlDocument * names:seq&lt;string&gt;) -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L660-660" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Finds all of the descendant nodes of this document that match the given set of names
+Recurses on match</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '230', 230)" onmouseover="showTip(event, '230', 230)">
+            Descendants(doc, names, recurseOnMatch)
+          </code>
+          <div class="tip" id="230">
+            <strong>Signature:</strong> (doc:HtmlDocument * names:seq&lt;string&gt; * recurseOnMatch:bool) -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L651-651" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -91,15 +150,55 @@ this throws an exception if no body element exists.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '235', 235)" onmouseover="showTip(event, '235', 235)">
-            Descendants(d, f, recurseOnMatch)
+          <code onmouseout="hideTip(event, '231', 231)" onmouseover="showTip(event, '231', 231)">
+            Descendants(doc)
           </code>
-          <div class="tip" id="235">
-            <strong>Signature:</strong> (d:HtmlDocument * f:(HtmlNode -&gt; bool) option * recurseOnMatch:bool option) -&gt; HtmlNode list<br />
+          <div class="tip" id="231">
+            <strong>Signature:</strong> doc:HtmlDocument -&gt; HtmlNode list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L553-553" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L640-640" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets all of the descendants of this document
+Recurses on match</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '232', 232)" onmouseover="showTip(event, '232', 232)">
+            Descendants(doc, predicate)
+          </code>
+          <div class="tip" id="232">
+            <strong>Signature:</strong> (doc:HtmlDocument * predicate:(HtmlNode -&gt; bool)) -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L633-633" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets all of the descendants of this document that statisfy the given predicate
+Recurses on match</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '233', 233)" onmouseover="showTip(event, '233', 233)">
+            Descendants(...)
+          </code>
+          <div class="tip" id="233">
+            <strong>Signature:</strong> (doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) * recurseOnMatch:bool) -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L624-624" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -110,19 +209,59 @@ this throws an exception if no body element exists.</p>
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '236', 236)" onmouseover="showTip(event, '236', 236)">
-            Elements(d, names)
+          <code onmouseout="hideTip(event, '234', 234)" onmouseover="showTip(event, '234', 234)">
+            DescendantsWithPath(doc, name)
           </code>
-          <div class="tip" id="236">
-            <strong>Signature:</strong> (d:HtmlDocument * names:seq&lt;string&gt;) -&gt; HtmlNode list<br />
+          <div class="tip" id="234">
+            <strong>Signature:</strong> (doc:HtmlDocument * name:string) -&gt; (HtmlNode * HtmlNode list) list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L583-583" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L744-744" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns all of the elements in the current document that match the set of names</p>
+          <p>Finds all of the descendant nodes of this document that match the given name
+Recurses on match</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '235', 235)" onmouseover="showTip(event, '235', 235)">
+            DescendantsWithPath(...)
+          </code>
+          <div class="tip" id="235">
+            <strong>Signature:</strong> (doc:HtmlDocument * name:string * recurseOnMatch:bool) -&gt; (HtmlNode * HtmlNode list) list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L735-735" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Finds all of the descendant nodes of this document that match the given name</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '236', 236)" onmouseover="showTip(event, '236', 236)">
+            DescendantsWithPath(doc, names)
+          </code>
+          <div class="tip" id="236">
+            <strong>Signature:</strong> (doc:HtmlDocument * names:seq&lt;string&gt;) -&gt; (HtmlNode * HtmlNode list) list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L725-725" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Finds all of the descendant nodes of this document that match the given set of names
+Recurses on match</p>
 
         </td>
       </tr>
@@ -130,19 +269,18 @@ this throws an exception if no body element exists.</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '237', 237)" onmouseover="showTip(event, '237', 237)">
-            Elements(d, f)
+            DescendantsWithPath(...)
           </code>
           <div class="tip" id="237">
-            <strong>Signature:</strong> (d:HtmlDocument * f:(HtmlNode -&gt; bool) option) -&gt; HtmlNode list<br />
+            <strong>Signature:</strong> (doc:HtmlDocument * names:seq&lt;string&gt; * recurseOnMatch:bool) -&gt; (HtmlNode * HtmlNode list) list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L574-574" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L716-716" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns all of the elements of the current document
-that match the given predicate</p>
+          <p>Finds all of the descendant nodes of this document that match the given set of names</p>
 
         </td>
       </tr>
@@ -150,18 +288,135 @@ that match the given predicate</p>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '238', 238)" onmouseover="showTip(event, '238', 238)">
-            TryBody(d)
+            DescendantsWithPath(doc)
           </code>
           <div class="tip" id="238">
-            <strong>Signature:</strong> d:HtmlDocument -&gt; HtmlNode option<br />
+            <strong>Signature:</strong> doc:HtmlDocument -&gt; (HtmlNode * HtmlNode list) list<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L545-545" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L705-705" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Trys to find the body element of the given document.</p>
+          <p>Gets all of the descendants of this document
+Recurses on match</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '239', 239)" onmouseover="showTip(event, '239', 239)">
+            DescendantsWithPath(doc, predicate)
+          </code>
+          <div class="tip" id="239">
+            <strong>Signature:</strong> (doc:HtmlDocument * predicate:(HtmlNode -&gt; bool)) -&gt; (HtmlNode * HtmlNode list) list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L698-698" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets all of the descendants of this document that statisfy the given predicate
+Recurses on match</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '240', 240)" onmouseover="showTip(event, '240', 240)">
+            DescendantsWithPath(...)
+          </code>
+          <div class="tip" id="240">
+            <strong>Signature:</strong> (doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) * recurseOnMatch:bool) -&gt; (HtmlNode * HtmlNode list) list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L689-689" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Gets all of the descendants of this document that statisfy the given predicate</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '241', 241)" onmouseover="showTip(event, '241', 241)">
+            Elements(doc, name)
+          </code>
+          <div class="tip" id="241">
+            <strong>Signature:</strong> (doc:HtmlDocument * name:string) -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L615-615" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns all of the root elements in the current document that match the name</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '242', 242)" onmouseover="showTip(event, '242', 242)">
+            Elements(doc, names)
+          </code>
+          <div class="tip" id="242">
+            <strong>Signature:</strong> (doc:HtmlDocument * names:seq&lt;string&gt;) -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L607-607" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns all of the root elements in the current document that match the set of names</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '243', 243)" onmouseover="showTip(event, '243', 243)">
+            Elements(doc)
+          </code>
+          <div class="tip" id="243">
+            <strong>Signature:</strong> doc:HtmlDocument -&gt; HtmlNode list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L599-599" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Returns all of the root elements of the current document
+that match the given predicate</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '244', 244)" onmouseover="showTip(event, '244', 244)">
+            TryGetBody(doc)
+          </code>
+          <div class="tip" id="244">
+            <strong>Signature:</strong> doc:HtmlDocument -&gt; HtmlNode option<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L756-756" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Tries to find the body element of the given document.</p>
 
         </td>
       </tr>
