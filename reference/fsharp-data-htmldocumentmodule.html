@@ -42,6 +42,7 @@
 
 <h1>HtmlDocument</h1>
 <div class="xmldoc">
+<p>Module with operations on HTML documents</p>
 </div>
 
 <!-- Render nested types and modules, if there are any -->
@@ -63,12 +64,14 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L576-576" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L639-639" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
           <p>Finds the body element of the given document,
-this throws an exception if no body element exists.</p>
+this throws an exception if no body element exists.
+Parameters:
+* x - The given document</p>
 
         </td>
       </tr>
@@ -79,15 +82,19 @@ this throws an exception if no body element exists.</p>
             descendants recurseOnMatch predicate doc
           </code>
           <div class="tip" id="5">
-            <strong>Signature:</strong> recurseOnMatch:bool -&gt; predicate:(HtmlNode -&gt; bool) -&gt; doc:HtmlDocument -&gt; HtmlNode list<br />
+            <strong>Signature:</strong> recurseOnMatch:bool -&gt; predicate:(HtmlNode -&gt; bool) -&gt; doc:HtmlDocument -&gt; seq&lt;HtmlNode&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L539-539" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L606-606" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Gets all of the descendants of this document that statisfy the given predicate</p>
+          <p>Gets all of the descendants of this document that statisfy the given predicate
+Parameters:
+<em> recurseOnMatch - If a match is found continues down the tree matching child elements
+</em> predicate - The predicate by which to match the nodes to return
+* doc - The given document</p>
 
         </td>
       </tr>
@@ -98,15 +105,19 @@ this throws an exception if no body element exists.</p>
             descendantsNamed (...)
           </code>
           <div class="tip" id="6">
-            <strong>Signature:</strong> recurseOnMatch:bool -&gt; names:seq&lt;string&gt; -&gt; doc:HtmlDocument -&gt; HtmlNode list<br />
+            <strong>Signature:</strong> recurseOnMatch:bool -&gt; names:seq&lt;string&gt; -&gt; doc:HtmlDocument -&gt; seq&lt;HtmlNode&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L548-548" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L614-614" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Finds all of the descendant nodes of this document that match the given set of names</p>
+          <p>Finds all of the descendant nodes of this document that match the given set of names
+Parameters:
+<em> recurseOnMatch - If a match is found continues down the tree matching child elements
+</em> names - The set of names to match
+* doc - The given document</p>
 
         </td>
       </tr>
@@ -117,15 +128,19 @@ this throws an exception if no body element exists.</p>
             descendantsNamedWithPath (...)
           </code>
           <div class="tip" id="7">
-            <strong>Signature:</strong> recurseOnMatch:bool -&gt; names:seq&lt;string&gt; -&gt; doc:HtmlDocument -&gt; (HtmlNode * HtmlNode list) list<br />
+            <strong>Signature:</strong> recurseOnMatch:bool -&gt; names:seq&lt;string&gt; -&gt; doc:HtmlDocument -&gt; seq&lt;HtmlNode * HtmlNode list&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L567-567" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L631-631" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Finds all of the descendant nodes of this document that match the given set of names</p>
+          <p>Finds all of the descendant nodes of this document that match the given set of names
+Parameters:
+<em> recurseOnMatch - If a match is found continues down the tree matching child elements
+</em> names - The set of names to match
+* doc - The given document</p>
 
         </td>
       </tr>
@@ -136,15 +151,19 @@ this throws an exception if no body element exists.</p>
             descendantsWithPath (...)
           </code>
           <div class="tip" id="8">
-            <strong>Signature:</strong> recurseOnMatch:bool -&gt; predicate:(HtmlNode -&gt; bool) -&gt; doc:HtmlDocument -&gt; (HtmlNode * HtmlNode list) list<br />
+            <strong>Signature:</strong> recurseOnMatch:bool -&gt; predicate:(HtmlNode -&gt; bool) -&gt; doc:HtmlDocument -&gt; seq&lt;HtmlNode * HtmlNode list&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L558-558" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L623-623" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Gets all of the descendants of this document that statisfy the given predicate</p>
+          <p>Gets all of the descendants of this document that statisfy the given predicate
+Parameters:
+<em> recurseOnMatch - If a match is found continues down the tree matching child elements
+</em> predicate - The predicate by which to match the nodes to return
+* doc - The given document</p>
 
         </td>
       </tr>
@@ -159,7 +178,7 @@ this throws an exception if no body element exists.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L515-515" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L584-584" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -178,7 +197,7 @@ this throws an exception if no body element exists.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L520-520" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L589-589" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -196,11 +215,14 @@ this throws an exception if no body element exists.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L529-529" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L597-597" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Returns all of the root elements of the document that match the set of names</p>
+          <p>Returns all of the root elements of the document that match the set of names
+Parameters:
+<em> names - The set of names to match
+</em> doc - The given document</p>
 
         </td>
       </tr>
@@ -215,11 +237,13 @@ this throws an exception if no body element exists.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L585-585" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Html/HtmlOperations.fs#L647-647" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          <p>Tries to find the body element of the given document.</p>
+          <p>Tries to find the body element of the given document.
+Parameters:
+* x - The given document</p>
 
         </td>
       </tr>

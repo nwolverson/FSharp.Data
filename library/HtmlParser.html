@@ -137,16 +137,17 @@ and <code>Seq.map</code>.</p>
    "https://www.nuget.org/packages/FSharp.Data");
   ("Microsoft.FSharp.Data.TypeProviders Namespace (F#) - MSDN",
    "http://msdn.microsoft.com/en-GB/library/hh362324.aspx");
-  ("Data Access | The F# Software Foundation", "http://fsharp.org/data-access/");
+  ("Data Access | The F# Software Foundation",
+   "http://fsharp.org/guides/data-access/");
+  ("Data Science | The F# Software Foundation",
+   "http://fsharp.org/data-science/");
   ("F# Data: New type provider library - Tomas Petricek",
    "http://tomasp.net/blog/fsharp-data.aspx/");
   ("Newest 'f#-data' Questions - Stack Overflow",
    "http://stackoverflow.com/questions/tagged/f%2523-data");
   ("FSharp.Data.SqlClient: Seamlessly integrating T-SQL and F# in the ...",
    "http://blogs.msdn.com/b/fsharpteam/archive/2014/05/23/fsharp-data-sqlclient-seamlessly-integrating-sql-and-f-in-the-same-code-base-guest-post.aspx");
-  ("FSharp.Data (@FSharpData) | Twitter", "https://twitter.com/FSharpData");
-  ("F Sharp Programming/Basic Concepts - Wikibooks, open books for ...",
-   "http://en.wikibooks.org/wiki/F_Sharp_Programming/Basic_Concepts")|]
+  ("FSharp.Data (@FSharpData) | Twitter", "https://twitter.com/FSharpData")|]
 </code></pre></td></tr></table>
 
 <div class="tip" id="fs1">namespace FSharp</div>
@@ -155,7 +156,7 @@ and <code>Seq.map</code>.</p>
 <div class="tip" id="fs4">Multiple items<br />module HtmlDocument<br /><br />from FSharp.Data<br /><br />--------------------<br />type HtmlDocument =<br />&#160;&#160;private | HtmlDocument of docType: string * elements: HtmlNode list<br />&#160;&#160;override ToString : unit -&gt; string<br />&#160;&#160;member _Print : string<br />&#160;&#160;static member AsyncLoad : uri:string -&gt; Async&lt;HtmlDocument&gt;<br />&#160;&#160;static member Load : uri:string -&gt; HtmlDocument<br />&#160;&#160;static member Load : reader:TextReader -&gt; HtmlDocument<br />&#160;&#160;static member Load : stream:Stream -&gt; HtmlDocument<br />&#160;&#160;static member New : children:seq&lt;HtmlNode&gt; -&gt; HtmlDocument<br />&#160;&#160;static member New : docType:string * children:seq&lt;HtmlNode&gt; -&gt; HtmlDocument<br />&#160;&#160;static member Parse : text:string -&gt; HtmlDocument<br /><br />Full name: FSharp.Data.HtmlDocument</div>
 <div class="tip" id="fs5">static member HtmlDocument.Load : uri:string -&gt; HtmlDocument<br />static member HtmlDocument.Load : reader:System.IO.TextReader -&gt; HtmlDocument<br />static member HtmlDocument.Load : stream:System.IO.Stream -&gt; HtmlDocument</div>
 <div class="tip" id="fs6">val links : seq&lt;string * string&gt;<br /><br />Full name: HtmlParser.links</div>
-<div class="tip" id="fs7">static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * names:seq&lt;string&gt; -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * name:string -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) * recurseOnMatch:bool -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * names:seq&lt;string&gt; * recurseOnMatch:bool -&gt; HtmlNode list<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * name:string * recurseOnMatch:bool -&gt; HtmlNode list</div>
+<div class="tip" id="fs7">static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument -&gt; seq&lt;HtmlNode&gt;<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) -&gt; seq&lt;HtmlNode&gt;<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * names:seq&lt;string&gt; -&gt; seq&lt;HtmlNode&gt;<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * name:string -&gt; seq&lt;HtmlNode&gt;<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * predicate:(HtmlNode -&gt; bool) * recurseOnMatch:bool -&gt; seq&lt;HtmlNode&gt;<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * names:seq&lt;string&gt; * recurseOnMatch:bool -&gt; seq&lt;HtmlNode&gt;<br />static member HtmlDocumentExtensions.Descendants : doc:HtmlDocument * name:string * recurseOnMatch:bool -&gt; seq&lt;HtmlNode&gt;</div>
 <div class="tip" id="fs8">module Seq<br /><br />from Microsoft.FSharp.Collections</div>
 <div class="tip" id="fs9">val choose : chooser:(&#39;T -&gt; &#39;U option) -&gt; source:seq&lt;&#39;T&gt; -&gt; seq&lt;&#39;U&gt;<br /><br />Full name: Microsoft.FSharp.Collections.Seq.choose</div>
 <div class="tip" id="fs10">val x : HtmlNode</div>
