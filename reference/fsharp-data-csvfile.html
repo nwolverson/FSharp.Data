@@ -47,7 +47,8 @@ Columns are delimited by one of the chars passed by <code>separators</code> (def
 to escape the separator chars, the <code>quote</code> character will be used (defaults to <code>"</code>).
 If <code>hasHeaders</code> is true (the default), the first line read by <code>reader</code> will not be considered part of data.
 If <code>ignoreErrors</code> is true (the default is false), rows with a different number of columns from the header row
-(or the first row if headers are not present) will be ignored.</p>
+(or the first row if headers are not present) will be ignored.
+The first <code>skipRows</code> lines will be skipped.</p>
 </div>
   <h3>Instance members</h3>
   <table class="table table-bordered member-list">
@@ -66,7 +67,7 @@ If <code>ignoreErrors</code> is true (the default is false), rows with a differe
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L338-338" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L345-345" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -86,7 +87,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L342-342" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L349-349" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -105,7 +106,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L197-197" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L204-204" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -124,7 +125,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L199-199" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L206-206" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -143,7 +144,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L203-203" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L210-210" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -162,7 +163,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L195-195" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L202-202" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -181,7 +182,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L322-322" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L329-329" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -200,7 +201,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L315-315" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L322-322" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -219,7 +220,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L286-286" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L293-293" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -238,7 +239,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L328-328" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L335-335" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -257,7 +258,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L201-201" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L208-208" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -276,7 +277,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L355-355" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L362-362" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -295,7 +296,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L360-360" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L367-367" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -315,7 +316,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L346-346" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L353-353" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -334,7 +335,7 @@ that each row will be only be read and parsed from the input at most once.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L351-351" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L358-358" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -354,7 +355,7 @@ returns <c>true</c>, and then returns no further rows.</p>
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L364-364" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvRuntime.fs#L371-371" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -377,11 +378,11 @@ returns <c>true</c>, and then returns no further rows.</p>
             AsyncLoad(...)
           </code>
           <div class="tip" id="183">
-            <strong>Signature:</strong> (uri:string * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option) -&gt; Async&lt;CsvFile&gt;<br />
+            <strong>Signature:</strong> (uri:string * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option * skipRows:int option) -&gt; Async&lt;CsvFile&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L94-94" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L96-96" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -396,11 +397,11 @@ returns <c>true</c>, and then returns no further rows.</p>
             Load(...)
           </code>
           <div class="tip" id="184">
-            <strong>Signature:</strong> (uri:string * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option) -&gt; CsvFile<br />
+            <strong>Signature:</strong> (uri:string * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option * skipRows:int option) -&gt; CsvFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L85-85" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L87-87" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -415,11 +416,11 @@ returns <c>true</c>, and then returns no further rows.</p>
             Load(...)
           </code>
           <div class="tip" id="185">
-            <strong>Signature:</strong> (reader:TextReader * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option) -&gt; CsvFile<br />
+            <strong>Signature:</strong> (reader:TextReader * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option * skipRows:int option) -&gt; CsvFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L72-72" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L74-74" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -434,11 +435,11 @@ returns <c>true</c>, and then returns no further rows.</p>
             Load(...)
           </code>
           <div class="tip" id="186">
-            <strong>Signature:</strong> (stream:Stream * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option) -&gt; CsvFile<br />
+            <strong>Signature:</strong> (stream:Stream * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option * skipRows:int option) -&gt; CsvFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L63-63" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L65-65" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -453,11 +454,11 @@ returns <c>true</c>, and then returns no further rows.</p>
             Parse(...)
           </code>
           <div class="tip" id="187">
-            <strong>Signature:</strong> (text:string * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option) -&gt; CsvFile<br />
+            <strong>Signature:</strong> (text:string * separators:string option * quote:char option * hasHeaders:bool option * ignoreErrors:bool option * skipRows:int option) -&gt; CsvFile<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L58-58" class="github-link">
+            <a href="https://github.com/fsharp/FSharp.Data/tree/master//src/Csv/CsvFile.fs#L60-60" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>

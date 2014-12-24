@@ -63,7 +63,8 @@ Columns are delimited by one of the chars passed by <code>separators</code> (def
 to escape the separator chars, the <code>quote</code> character will be used (defaults to <code>"</code>).
 If <code>hasHeaders</code> is true (the default), the first line read by <code>reader</code> will not be considered part of data.
 If <code>ignoreErrors</code> is true (the default is false), rows with a different number of columns from the header row
-(or the first row if headers are not present) will be ignored.</p>
+(or the first row if headers are not present) will be ignored.
+The first <code>skipRows</code> lines will be skipped.</p>
 </td>
         </tr>
         <tr>
