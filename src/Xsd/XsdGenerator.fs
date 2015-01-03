@@ -198,6 +198,8 @@ and internal Schema(this:System.Xml.Schema.XmlSchema, failOnUnsupported : bool) 
                      ("boolean"     , typeof<bool>);
                      ] 
     
+    member x.TargetNamespace = this.TargetNamespace
+
     member private x.Read (external:XmlSchemaExternal) =
         try
             let root = Path.GetDirectoryName(this.SourceUri)
@@ -420,6 +422,7 @@ module XsdBuilder =
                  | _ -> failwithf "unknown type definition %s %s" (typeDeclaration.Name.ToString()) (typeDeclaration.GetType().Name)
           try
             _types.Add(n,t)
+            _types.Add(schema.TargetNamespace + ":" + n,t)
           with e ->
             match e with
             :? ArgumentException -> failwithf "duplication of type '%s'" n
